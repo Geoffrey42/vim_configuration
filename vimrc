@@ -9,8 +9,14 @@ let localleader = "\\"
 " enable mouse control
 set mouse=a
 
+" enable syntax color
+syntax on
+
 " show line number
 set number
+
+" make the 81st column turn red
+set colorcolumn=81
 
 " map - key to delete current line and paste it below
 noremap - dd p
