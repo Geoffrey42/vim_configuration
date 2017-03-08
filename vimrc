@@ -1,4 +1,4 @@
-" *** Geoffrey's vim configuration file based on 'Learn Vimscript The Hard Way' from Steve Losh***
+" *** Geoffrey's vim configuration file based on 'Learn Vimscript The Hard Way' from Steve Losh ***
 
 echo "*** let's vim that file ***"
 
