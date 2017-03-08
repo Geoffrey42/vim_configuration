@@ -62,23 +62,34 @@ nnoremap <Down> <nop>
 nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 
-" Comment out current line for javascript files
-autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+augroup filetype_html
+	autocmd!
+	" Comment out current line for html files
+	autocmd FileType html nnoremap <buffer> <localleader>c I<!--<Space><esc>$a<Space>--><esc>
+	" Display a markup in a closed view
+	autocmd FileType html nnoremap <buffer> <localleader>f Vatzf
+augroup END
 
-" Comment out current line for python files
-autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+augroup filetype_javascript
+	autocmd!
+	" Comment out current line for javascript files
+	autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+	" useful abbreviations for javascript files
+	autocmd FileType javascript :iabbrev <buffer> iff if ()<Left>
+augroup END
 
-" Comment out current line for c files
-autocmd FileType c nnoremap <buffer> <localleader>c I/*<Space><esc>$a<Space>*/<esc>
+augroup filetype_c
+	autocmd!
+	" Comment out current line for c files
+	autocmd FileType c nnoremap <buffer> <localleader>c I/*<Space><esc>$a<Space>*/<esc>
+	" useful abbreviations for c files
+	autocmd FileType c :iabbrev <buffer> rett return ();<Left><Left>
+augroup END
 
-" Comment out current line for html files
-autocmd FileType html nnoremap <buffer> <localleader>c I<!--<Space><esc>$a<Space>--><esc>
-
-" useful abbreviations for javascript files
-autocmd FileType javascript :iabbrev <buffer> iff if ()<Left>
-
-" useful abbreviations for python files
-autocmd FileType python :iabbrev <buffer> iff if:<Left>
-
-" useful abbreviations for c files
-autocmd FileType c :iabbrev <buffer> rett return ();<Left><Left>
+augroup filetype_python
+	autocmd!
+	" Comment out current line for python files
+	autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+	" useful abbreviations for python files
+	autocmd FileType python :iabbrev <buffer> iff if:<Left>
+augroup END
