@@ -105,5 +105,4 @@ augroup filetype_python
 	set shiftwidth=4        " number of spaces to use for auto indent
 	set autoindent          " copy indent from current line when starting a new line
 
-"
 augroup END
