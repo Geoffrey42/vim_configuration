@@ -2,6 +2,15 @@
 
 echo "*** let's vim that file ***"
 
+" set tabs for 42 school norminette requirements
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set autoindent
+set smartindent
+filetype plugin indent on
+set showcmd
+
 " set leader and local leader key
 let mapleader = "-"
 let localleader = "\\"
@@ -18,6 +27,8 @@ set number
 " make the 81st column turn red
 set colorcolumn=81
 
+" show line count in visual mode
+set showcmd
 " map - key to delete current line and paste it below
 noremap - dd p
 
@@ -92,17 +103,17 @@ augroup filetype_c
 	autocmd FileType c :iabbrev <buffer> rett return ();<Left><Left>
 augroup END
 
-augroup filetype_python
-	autocmd!
-	" Comment out current line for python files
-	autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
-	" useful abbreviations for python files
-	autocmd FileType python :iabbrev <buffer> iff if:<Left>
-	set expandtab           " enter spaces when tab is pressed
-	set textwidth=120       " break lines when line length increases
-	set tabstop=4           " use 4 spaces to represent tab
-	set softtabstop=4
-	set shiftwidth=4        " number of spaces to use for auto indent
-	set autoindent          " copy indent from current line when starting a new line
+"augroup filetype_python
+"	autocmd!
+"	" Comment out current line for python files
+"	autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+"	" useful abbreviations for python files
+"	autocmd FileType python :iabbrev <buffer> iff if:<Left>
+"    #set expandtab           " enter spaces when tab is pressed
+"    #set textwidth=120       " break lines when line length increases
+"    #set tabstop=4           " use 4 spaces to represent tab
+"    #set softtabstop=4
+"    #set shiftwidth=4        " number of spaces to use for auto indent
+"    #set autoindent          " copy indent from current line when starting a new line
 
 augroup END
